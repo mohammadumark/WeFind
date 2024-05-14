@@ -1,19 +1,22 @@
 /* LoginScreen.css */
-
+@import "colors.css";
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw; /* Changed from 210vh */
+    height: 100vh;
+    overflow: hidden; 
 }
 
 .image-container {
     width: 70%; /* Adjusted width */
-    height: 100vh;
+    /* height: 100%; */
 }
-
 .login-button2{
-    background-color: #6997DD;
+    background-color: var(--primary-color);
     color: white;
+    /* border: 1px solid #6997DD; */
     width: 100%;
     padding: 8px;
 }
@@ -21,13 +24,18 @@
 .login-image {
     width: 100%;
     height: 100%;
+  
 }
 
 .form-container {
+    margin-top: 80px;
     width: 30%;
     height: 100%;
     align-items: center;
     padding: 30px;
+    /* border: 1px solid #ccc;
+    border-radius: 5px; */
+    margin-left: auto; /* Push the form container to the right */
 }
 
 .form-container h2 {
@@ -70,9 +78,8 @@
 
 .forgot-password span {
     cursor: pointer;
-    color: #6997DD;
+    color: var(--primary-color);
 }
-
 .logo-icon {
     width: 67.98px;
     height: 75.85px;
@@ -81,14 +88,16 @@
     transform: rotate(-15.4deg);
     margin-right: -27px;
     margin-bottom: -20px;
+
 }
+
 
 .register-text {
     text-align: center;
 }
 
 .register-text a {
-    color: #6997DD;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -100,27 +109,39 @@
 }
 
 .buttons-container button.login-button {
-    background-color: #6997DD;
+    background-color: var(--primary-color);
     color: white;
-    border: 1px solid #6997DD;
+    border: 1px solid var(--primary-color);
 }
 
 .buttons-container button.signup-button {
     background-color: white;
-    color: #6997DD;
-    border: 1px solid #6997DD;
-}
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    @media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column; /* Change flex direction to column for smaller screens */
+  }
 
+  .image-container {
+    display: none; /* Hide image container on smaller screens */
+  }
+
+  .form-container {
+    width: 100%; /* Take up full width on smaller screens */
+  }
+}
+}
 @media screen and (max-width: 768px) {
     .login-container {
-        flex-direction: column; /* Change flex direction to column for smaller screens */
+      /* flex-direction: column;  */
     }
-
+  
     .image-container {
-        display: none; /* Hide image container on smaller screens */
+      display: none; /* Hide image container on smaller screens */
     }
-
+  
     .form-container {
-        width: 100%; /* Take up full width on smaller screens */
+      width: 100%; /* Take up full width on smaller screens */
     }
-}
+  }

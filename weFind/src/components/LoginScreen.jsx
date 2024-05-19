@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LoginScreen.css'; // Import CSS file for styling
 
 const LoginScreen = ({ switchToSignup }) => {
@@ -7,6 +8,7 @@ const LoginScreen = ({ switchToSignup }) => {
   const [rememberMe, setRememberMe] = useState(false);
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const navigate = useNavigate(); // Hook from React Router
 
   const validateCredentials = () => {
     let isValid = true;
@@ -36,6 +38,9 @@ const LoginScreen = ({ switchToSignup }) => {
     if (validateCredentials()) {
       console.log('Logging in with:', { username, password, rememberMe });
       // Implement your login logic here
+
+      // Navigate to the HomeScreen after successful login
+      navigate('/home');
     }
   };
 

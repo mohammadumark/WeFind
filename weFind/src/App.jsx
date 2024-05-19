@@ -1,27 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LoginScreen from './components/LoginScreen';
-import RegisterScreen from './components/RegisterScreen';
+// import RegisterScreen from './components/RegisterScreen';
+// import JobScreen from './components/JobScreen';
+// import AppliedJob from './components/AppliedJob';
+// import ProfileScreen from './components/ProfileScreen';
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
-
-  const switchToRegister = () => {
-    setIsLogin(false);
-  };
-
-  const switchToLogin = () => {
-    setIsLogin(true);
-  };
-
   return (
-    <div className="App">
-      {isLogin ? (
-        <LoginScreen switchToSignup={switchToRegister} />
-      ) : (
-        <RegisterScreen switchToLogin={switchToLogin} />
-      )}
-    </div>
-  
+    // <Router>
+    //   <Routes>
+    //     <Route path="/login" element={<LoginScreen />} />
+    //     <Route path="/register" element={<RegisterScreen />} />
+    //     <Route path="/home" element={<HomeScreen />} />
+    //     <Route path="*" element={<Navigate to="/login" />} />
+    //   </Routes>
+    // </Router>
+    <SignupScreen/>
   );
 }
 
